@@ -2,12 +2,12 @@ package cinema.simone.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import cinema.simone.entity.Palinsesto;
 import cinema.simone.entity.Recensione;
-import cinema.simone.repository.PalinsestoRepository;
 import cinema.simone.repository.RecensioneRepository;
 
 @RestController
@@ -21,6 +21,12 @@ public class RecensioneController {
 	public Iterable<Recensione> getAllSchedule() {
 		return recensioneRepository.findAll();
 	}
-
+    @PutMapping(path = "/add/{recensione}")
+    public void insertRecens(@PathVariable("recensione") String recensione) {
+    	Recensione r = new Recensione();
+    	r.setIdRecensione(recensione);
+    	
+    	
+    }
 
 }
