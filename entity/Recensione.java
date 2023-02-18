@@ -2,6 +2,8 @@ package cinema.simone.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -10,7 +12,9 @@ import jakarta.persistence.Table;
 
 public class Recensione {
 	
-	@Id @Column (name = "idRecensione")
+	@Id 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column (name = "idRecensione")
 	private String idRecensione;
 	@Column(name = "Testo")
 	private String testo;
