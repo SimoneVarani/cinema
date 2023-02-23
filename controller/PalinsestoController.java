@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 import cinema.simone.entity.Palinsesto;
 import cinema.simone.repository.PalinsestoRepository;
 
+/*
+ *  /schedules
+ *  /schedules/10/sales/123
+ * 
+ */
 @RestController
 @RequestMapping("/palinsesto")
 public class PalinsestoController {

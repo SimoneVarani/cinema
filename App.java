@@ -10,3 +10,10 @@ public class App {
         SpringApplication.run(App.class, args);
     }
 }
+
+/*
+Pulire il codice 
+creare service di tutte le entity
+creare nuove query custom
+creare le collection in postman
+*/
