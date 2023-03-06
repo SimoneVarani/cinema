@@ -16,12 +16,12 @@ public class PostoController {
 		@Autowired
 		private PostoRepository postoRepository;
 
-		@GetMapping(path = "/all")
+		@GetMapping(path = "/")
 		public Iterable<Posto> getAllSchedule() {
 			return postoRepository.findAll();
 		}
 		
-		 @GetMapping(path = "/getId/{id}")
+		 @GetMapping(path = "/{id}")
 	 	public String getID(@PathVariable("id") String id) {
 	 	Optional<Posto> Posto = postoRepository.findById(id);
 			if(Posto.isPresent()) {

@@ -17,12 +17,12 @@ public class SaleController {
 			@Autowired
 			private SaleRepository salerepository;;
 
-			@GetMapping(path = "/all")
+			@GetMapping(path = "/")
 			public Iterable<Sale> getAllAuditorium() {
 				return salerepository.findAll();
 			}
 			
-			 @GetMapping(path = "/getId/{id}")
+			 @GetMapping(path = "/{id}")
 		 	public String getID(@PathVariable("id") Integer id) {
 		 	Optional<Sale> sale = salerepository.findById(id);
 				if(sale.isPresent()) {

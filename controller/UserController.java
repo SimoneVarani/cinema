@@ -21,12 +21,12 @@ public class UserController {
 	@Autowired
 	private UserRepository userRepository;
 
-	@GetMapping(path = "/all")
+	@GetMapping(path = "/")
 	public Iterable<Utente> getAllUsers() {
 		return userRepository.findAll();
 	}
 
-	@GetMapping(path = "/find/{userName}")
+	@GetMapping(path = "/{userName}")
 	public String getUser(@PathVariable String userName) {
 
 		Optional<Utente> utente = userRepository.findById(userName);
@@ -36,7 +36,7 @@ public class UserController {
 		return "Utente non trovato";
 	}
 
-	@DeleteMapping(path = "/del/{userName}")
+	@DeleteMapping(path = "/del/{userName}")//come capire se devo cancellare piuttosto che inserire???
 	public String killUser(@PathVariable("userName") String userName) {
 
 		Utente u = new Utente();

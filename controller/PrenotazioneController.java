@@ -16,12 +16,12 @@ public class PrenotazioneController {
 			@Autowired
 			private PrenotazioneRepository prenotazionerepository;
 
-			@GetMapping(path = "/all")
+			@GetMapping(path = "")
 			public Iterable<Prenotazione> getAllPrenotazioni() {
 				return prenotazionerepository.findAll();
 			}
 			
-			 @GetMapping(path = "/getId/{id}")
+			 @GetMapping(path = "/{id}")
 		 	public String getID(@PathVariable("id") String id) {
 		 	Optional<Prenotazione> prenotazione = prenotazionerepository.findById(id);
 				if(prenotazione.isPresent()) {
